@@ -24,7 +24,7 @@ const MongoStore = require('connect-mongo');
 
 // 'mongodb://127.0.0.1:27017/yelpcamp'
 
-mongoose.connect(dbUrl, {
+mongoose.connect("mongodb+srv://vivekjain:sMT0fHHwzgEADYzx@cluster0.9i081.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
