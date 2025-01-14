@@ -1,0 +1,65 @@
+<style>
+  #searchResultsContainer img {
+    width: 100%; /* Scale images to fit container width */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+#searchResultsContainer li {
+    font-size: 10px; /* Shrink text to fit small container */
+    overflow: hidden;
+    white-space: nowrap; /* Prevent text wrapping */
+    text-overflow: ellipsis; /* Add "..." for truncated text */
+}
+
+</style>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/campgrounds">YELPCAMP</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link <%= currentUrl=='/'?'active':'' %>" aria-current="page" href="/">Home</a>
+          <a class="nav-link <%= currentUrl=='/campgrounds'?'active':'' %>" href="/campgrounds">Campgrounds</a>
+          <a class="nav-link <%= currentUrl=='/campgrounds/new'?'active':'' %>" href="/campgrounds/new">New Campground</a>
+          <a class="nav-link me-4 <%= currentUrl=='/campgrounds/editbytitle'?'active':'' %>" href="/campgrounds/editbytitle">Edit Campground</a>
+          <!-- search bar -->
+          <!-- <form class="d-flex"> -->
+            <% if(currentUser){ %>
+
+            <div class="d-flex">
+              <form class="form-inline" id="searchForm">
+                <input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="Search Campgrounds" aria-label="Search">
+              </form>
+            <form id="first">
+              <button id="but" disabled class="btn btn-outline-secondary">Search</button>
+            </form>
+            <% }%>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-nav justify-content-end">
+      <% if(!currentUser){ %>
+      <a class="nav-link <%= currentUrl=='/login'?'active':'' %>" href="/login">Login</a>
+      <a class="nav-link <%= currentUrl=='/register'?'active':'' %>" href="/register">Register</a>
+      <% }else{ %>
+      <a class="nav-link" href="/logout">logout</a>
+    <% } %>
+    </div>
+  </nav>
+
+  <div class="container my-3">
+    <div class="position-relative">
+  <div id="searchResultsContainer" class="d-none  sticky-top bg-light border position-absolute w-60" style="width: 300px; height: 300px; top: 50%; left: 50%; transform: translate( -50%); z-index: 1050; overflow-y: auto; overflow-x: hidden;">
+  
+    <ul class="list-group" id="searchResults">
+    </ul>
+</div>
+</div>
+</div>
+
+  <script src="/js/search.js"></script>
+
+  <% currentUrl=='/campground'?'active':'' %>

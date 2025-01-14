@@ -1,0 +1,43 @@
+<% layout('layout/boilerplate') %>
+<div class="row">
+    
+    <div class="col-6 offset-3">
+        <h1 class="text-centre">New Camps</h1>
+        <form action="/campgrounds" class="row g-3 needs-validation" novalidate method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="title"  class="form-label" >Title:</label>
+                <input type="text"class="form-control" id="title" name="title"required  >
+                <div class="valid-feedback">Looks Good</div>
+
+            </div>
+            <div>
+                <label for="description" class="form-label">Description:</label>
+                <textarea type="text"class="form-control" id="description" name="description"required  ></textarea>
+                <div class="valid-feedback">Looks Good</div>
+            </div>
+            <div>
+                <label for="location" class="form-label">Location:</label>
+                <input type="text"class="form-control" id="location" name="location"required  >
+                <div class="valid-feedback">Looks Good</div>
+
+            </div>
+            <div class="input-group ">
+                <input type="file" class="form-control" id="image" name="image" multiple>
+                <label class="input-group-text" for="image">Upload</label>
+              </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price:</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">$</span>
+                <input type="text" class="form-control" placeholder="0.00" id="price" name="price" required aria-label="Price" aria-describedby="basic-addon1">
+                <div class="valid-feedback">Looks Good</div>
+  
+            </div>
+            </div>
+            <button class="btn btn-primary mb-3 mt-2">Submit</button>
+        </form>
+        <a href="/campgrounds">All Campgrounds</a>
+
+    </div>
+</div>
+
