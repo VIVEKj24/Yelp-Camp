@@ -22,9 +22,9 @@ const helmet = require('helmet');
 const dbUrl = process.env.DB_URL
 const MongoStore = require('connect-mongo');
 
-// 
+// 'mongodb://127.0.0.1:27017/yelpcamp'
 
-mongoose.connect('mongodb://127.0.0.1:27017/yelpcamp', {
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
