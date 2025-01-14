@@ -30,6 +30,7 @@ mongoose.connect("mongodb+srv://vivekjain:sMT0fHHwzgEADYzx@cluster0.9i081.mongod
   })
     .then(() => console.log('MongoDB connection successful'))
     .catch((err) => console.error('MongoDB connection error:', err));
+mongoose.set('debug', true);
 
 app.engine('ejs',ejsMate)
 app.set('view engine','ejs')
