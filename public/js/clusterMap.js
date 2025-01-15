@@ -4,10 +4,9 @@ const map = new maptilersdk.Map({
     container: 'map',
     terrainControl: true,
     style: maptilersdk.MapStyle.BRIGHT,
-    // center: [-103.59179687498357, 40.66995747013945],
-    // center: [28.6139, 77.2090],
-    center: [77.2090,28.6139 ],
-    zoom: 3
+    // center: [-103.59179687498357, 40.66995747013945] // a centre coordinate in UNited states
+    center: [78.6569,22.9734 ],
+    zoom: 3.5
 });
 
 map.on('load', function () {
