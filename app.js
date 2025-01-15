@@ -24,13 +24,12 @@ const MongoStore = require('connect-mongo');
 
 // 'mongodb://127.0.0.1:27017/yelpcamp'
 
-mongoose.connect("mongodb+srv://vivekjain:sMT0fHHwzgEADYzx@cluster0.9i081.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
     .then(() => console.log('MongoDB connection successful'))
     .catch((err) => console.error('MongoDB connection error:', err));
-mongoose.set('debug', true);
 
 app.engine('ejs',ejsMate)
 app.set('view engine','ejs')
