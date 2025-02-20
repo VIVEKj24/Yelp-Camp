@@ -9,14 +9,14 @@ const path = require('path')
 const ejsMate = require('ejs-mate')
 const mongoose = require('mongoose')
 const methodOverride=require('method-override')
-const ExpressError = require('./utils/ExpressErrors')
-const campgroundRoute = require('./routes/campground.js')
-const userRoute = require('./routes/users.js')
+const ExpressError = require('../utils/ExpressErrors.js')
+const campgroundRoute = require('../routes/campground.js')
+const userRoute = require('../routes/users.js')
 const session =require('express-session')
 const flash =  require('connect-flash')
 const passport = require('passport')
 const LocalStrategy = require('passport-local');
-const User = require('./models/user.js')
+const User = require('../models/user.js')
 const mongoSanitize = require('express-mongo-sanitize')
 const helmet = require('helmet');
 const dbUrl = process.env.DB_URL
@@ -33,7 +33,7 @@ mongoose.connect(dbUrl, {
 
 app.engine('ejs',ejsMate)
 app.set('view engine','ejs')
-app.set('views',path.join(__dirname,'views'))
+app.set('views',path.join(__dirname,'../views'))
 app.use(express.urlencoded({extended:true}))
 app.use(methodOverride('_method'))
 app.use(express.static('public'));
